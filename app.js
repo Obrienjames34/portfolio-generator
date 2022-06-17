@@ -1,9 +1,10 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
+
 const generatePage = require('./src/page-template');
 const promptUser = () => {
   return inquirer.prompt([
-    {      type: 'input',
+    { 
+           type: 'input',
       name: 'name',
       message: 'What is your name? (Required)',
       validate: nameInput => {
@@ -131,6 +132,7 @@ return inquirer
   
 };
 promptUser()
+fs.writeFile()
   .then(promptProject)
   .then(portfolioData =>  {
      const pageHTML = generatePage(portfolioData);
